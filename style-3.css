@@ -82,12 +82,13 @@ body {
 .main-label h1 {
     font-family: 'Playfair Display', serif;
     font-size: 8.5rem;
-    line-height: 1; /* Измени на 1, чтобы высота строки была равна размеру шрифта */
+    line-height: 1;
     margin: 0;
     padding: 0;
-    display: block; /* Гарантируем правильное поведение */
-}
+    display: block;
 
+    transform: translateY(-10px); /* поднимает вверх */
+}
 .main-label p {
     font-size: 1.5rem;
     letter-spacing: 12px;
