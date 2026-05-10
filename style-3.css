@@ -82,17 +82,18 @@ body {
 .main-label h1 {
     font-family: 'Playfair Display', serif;
     font-size: 8.5rem;
-    line-height: 0.8;
+    line-height: 1; /* Измени на 1, чтобы высота строки была равна размеру шрифта */
     margin: 0;
-    /* Убираем лишние отступы, если они были */
-    padding: 0; 
+    padding: 0;
+    display: block; /* Гарантируем правильное поведение */
 }
 
 .main-label p {
     font-size: 1.5rem;
     letter-spacing: 12px;
-    margin-top: 10px;
+    margin-top: 5px; /* Уменьши отступ, если "МАЯ" кажется слишком низко */
     text-transform: uppercase;
+    margin-right: -12px; /* ВАЖНО: компенсируем letter-spacing, чтобы текст не уезжал влево */
 }
 
 .tap-hint {
