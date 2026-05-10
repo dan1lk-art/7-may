@@ -87,7 +87,7 @@ body {
     padding: 0;
     display: block;
 
-    transform: translateY(-10px); /* поднимает вверх */
+    transform: translateY(-15px); /* поднимает вверх */
 }
 .main-label p {
     font-size: 1.5rem;
