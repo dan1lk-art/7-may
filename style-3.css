@@ -1,0 +1,142 @@
+/* 1. Сброс настроек */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: #d1d1d1;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Центр по горизонтали */
+    align-items: center;     /* Центр по вертикали */
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Чтобы ничего не дергалось */
+}
+
+/* 2. Контейнер - ГЛАВНЫЙ ОГРАНИЧИТЕЛЬ РАЗМЕРА */
+.card-container {
+    width: 320px;  /* Фиксированная ширина */
+    height: 480px; /* Фиксированная высота */
+    perspective: 1500px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* 3. Оболочка для анимации */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Класс переворота */
+.card-container.flipped .card {
+    transform: rotateY(180deg);
+}
+
+/* 4. Общие стили сторон */
+.side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+/* 5. ЛИЦЕВАЯ СТОРОНА */
+.front {
+    background: linear-gradient(135deg, #1b3022 0%, #2c5137 100%);
+    color: #d4af37;
+    border: 10px solid #ffffff;
+    z-index: 2;
+}
+
+.border-design {
+    position: absolute;
+    top: 10px; bottom: 10px; left: 10px; right: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    pointer-events: none;
+}
+
+.main-label {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-label h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 8.5rem;
+    line-height: 0.8;
+    margin: 0;
+    /* Убираем лишние отступы, если они были */
+    padding: 0; 
+}
+
+.main-label p {
+    font-size: 1.5rem;
+    letter-spacing: 12px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.tap-hint {
+    position: absolute;
+    bottom: 30px;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+/* 6. ОБРАТНАЯ СТОРОНА */
+.back {
+    background: #ffffff;
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 30px;
+    border: 10px solid #ffffff;
+}
+
+.back h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #1b3022;
+}
+
+.line {
+    width: 40px;
+    height: 2px;
+    background: #d4af37;
+    margin-bottom: 20px;
+}
+
+.details {
+    width: 100%;
+    text-align: left;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+
+.details p {
+    margin: 10px 0;
+    border-bottom: 1px solid #eee;
+}
